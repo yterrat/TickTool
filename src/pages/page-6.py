@@ -113,7 +113,7 @@ layout = html.Div([
     html.Br(),
     html.Div(
     [
-        dcc.Link('Previous', href='/5', className='modern-link', style={'width': '150px', 'textAlign': 'center'}),
+        dcc.Link('Previous', href='/page-5', className='modern-link', style={'width': '150px', 'textAlign': 'center'}),
         dcc.Link('Next', href='/page-7', className='modern-link', style={'width': '150px', 'textAlign': 'center'}),
     ],
     style={
