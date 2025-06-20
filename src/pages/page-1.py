@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+250.#!/usr/bin/env python3
 # Import packages
 
 import dash
@@ -51,6 +51,7 @@ layout = html.Div([
     html.Div([
         daq.Gauge(
             id='gauge_in1',
+            size = 250,
             color={"gradient": False, "ranges": {"grey": [0, 0.1], "limegreen": [0.1, 1], "orange": [1, 2], "red": [2, 3]}},
             scale={"custom": {
                 0.6: {"label": "Low", 'style': {'fontSize': 20, 'fontWeight': 'bold'}},
@@ -62,6 +63,7 @@ layout = html.Div([
         ),
         daq.Gauge(
             id='gauge_in2',
+            size = 250,
             color={"gradient": False, "ranges": {"grey": [0, 0.1], "limegreen": [0.1, 1], "orange": [1, 2], "red": [2, 3]}},
             scale={"custom": {
                 0.6: {"label": "Low", 'style': {'fontSize': 20, 'fontWeight': 'bold'}},
@@ -73,6 +75,7 @@ layout = html.Div([
         ),
         daq.Gauge(
             id='gauge_in3',
+            size = 250,
             color={"gradient": False, "ranges": {"grey": [0, 0.1], "red": [0.1, 1], "orange": [1, 2], "limegreen": [2, 3]}},
             scale={"custom": {
                 0.6: {"label": "Low", 'style': {'fontSize': 20, 'fontWeight': 'bold'}},
