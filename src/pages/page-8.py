@@ -322,7 +322,7 @@ layout = html.Div([
     ),
     html.Br(),
     html.Br(),
-    #html.Div(id='display-answers_p8', style={'marginTop': '50px', 'whiteSpace': 'pre-wrap'})
+    html.Div(id='display-answers_p8', style={'marginTop': '50px', 'whiteSpace': 'pre-wrap'})
     
 ])
         
@@ -684,7 +684,8 @@ def display_personalized_text3(data):
 
 @callback(
     Output(component_id='pet_advices', component_property='hidden'),
-    Input('record_answers', 'data'))
+    Input('record_answers', 'data')
+    )
 
 def display_pet_advices(data):
     if data['dog'] == 'yes' or data['cat'] == 'yes' or data['horse'] == 'yes':
@@ -722,7 +723,7 @@ def display_personalized_pet_advices_text(data):
     if data['dog'] == 'yes' or data['cat'] == 'yes' or data['horse'] == 'yes':
         sentence += "* Pets are **not able to transmit Lyme disease or other tick-borne diseases to humans. Having a pet has been associated with an increased risk of tick bites or disease spread by ticks. This is usually because having a pet means you spend more time outdoors and therefore closer to ticks**. It does not mean you should avoid having pets! If you see ticks on your pet, this suggests that you may also have been in a tick habitat and that you should take steps to protect both you, your pet(s), and your family.\n\n"
     
-    sentence += "* For more information on pets and ticks, visit [How can I protect my pets?] (https://ticktool.etick.ca/how-can-i-protect-my-pets/)\n\n"
+    sentence += "* For more information on pets and ticks, visit [How can I protect my pets?](https://ticktool.etick.ca/how-can-i-protect-my-pets/)\n\n"
     
     return dcc.Markdown(sentence)
 
@@ -736,14 +737,14 @@ def trigger_print(n_clicks):
     return ''
 
 
-# Display data dictionnary for dev
+#Display data dictionnary for dev
    
-# @callback(
-#     Output('display-answers_p8', 'children'),
-#     Input('record_answers', 'data')
-# )
+@callback(
+    Output('display-answers_p8', 'children'),
+    Input('record_answers', 'data')
+)
 
-# def display_answers_p8(data):
-#     if data:
-#         return html.Pre(json.dumps(data, indent=2))
-#     return "No data recorded yet."
+def display_answers_p8(data):
+    if data:
+        return html.Pre(json.dumps(data, indent=2))
+    return "No data recorded yet."
