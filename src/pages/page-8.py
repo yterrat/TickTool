@@ -693,7 +693,7 @@ def display_pet_advices(data):
 
 def display_personalized_pet_advices_text(data):
     
-    no_anti_ticks = ['no', 'yes', "I don't remember"]
+    no_anti_ticks = ['no', "I don't remember"]
     
     sentence = ''
     
