@@ -5,6 +5,7 @@ import dash
 from dash import dcc, html, Input, Output, callback, State
 import dash_daq as daq
 import random
+import plotly.graph_objs as go
 
 dash.register_page(__name__, path='/')
 
@@ -18,6 +19,21 @@ initial_state = {
     "gauge_in2": {"current": 0.0, "target": 0.0, "wait": 0},
     "gauge_in3": {"current": 0.0, "target": 0.0, "wait": 0}
 }
+
+gauge_fig = go.Figure(go.Indicator(
+    mode="gauge+number",
+    value=1.5,
+    gauge={
+        'axis': {'range': [0, 3]},
+        'bar': {'color': "darkblue", 'thickness': 0.5},  # Change thickness here (0-1)
+        'steps': [
+            {'range': [0, 0.1], 'color': 'grey'},
+            {'range': [0.1, 1], 'color': 'limegreen'},
+            {'range': [1, 2], 'color': 'orange'},
+            {'range': [2, 3], 'color': 'red'}
+        ]
+    }
+))
 
 layout = html.Div([
     html.Img(src='/assets/TickTOOL_logo.png', style={'width': '40%', 'height': '40%'}, className='image-gallery'),
@@ -48,6 +64,11 @@ layout = html.Div([
         'align-items': 'center',           # Align gauges vertically in the center
         'margin-top': '20px'
     }),
+    ############
+    ############
+    dcc.Graph(figure=gauge_fig),
+    
+    ###############
     html.Div([
         daq.Gauge(
             id='gauge_in1',

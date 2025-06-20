@@ -27,8 +27,8 @@ layout = html.Div([
            style={"display":"flex", "gap":"1px", "align-items":"flex-end", 'font-size' : '20px'}),
     html.Br(),
     html.B("Do you consent to sharing your responses with l'Université de Montréal?", style={'font-size': '20px'}),
-    #html.Br(),
-    #html.Br(),
+    html.Br(),
+    html.Br(),
     html.Div([
         dcc.Dropdown(
             options=[
@@ -36,7 +36,7 @@ layout = html.Div([
                 {'label': 'No', 'value': 'no'}
             ],
             style={'width': '100px'},
-            #value='',
+            value='',
             id = 'consent'
         )
     ], style={'font-size': '15px', 'marginLeft' : '30px'}),

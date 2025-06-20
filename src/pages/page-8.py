@@ -85,6 +85,13 @@ layout = html.Div([
         html.B('Your personalized report', style={'font-size': '60px'})
     ], style={'text-align': 'center'}),
     html.Br(),
+    html.P("Here is a legend that will help you understand the meaning of the colors :", style={'fontSize': '20px','textAlign': 'center','marginTop': '20px','marginBottom': '20px'  }),
+    html.Br(),
+    html.Img(src='/assets/legend_p8.png', style={'width': '60%', 'height': '60%'}, className='image-gallery'),
+    html.Br(),
+    html.P('"The greener the score, the lower your risk of being bitten by a tick and the better your prevention strategies."', style={'fontSize': '32px','textAlign': 'center','marginTop': '20px','marginBottom': '20px', 'font-weight': 'bold' }),
+    html.Br(),
+    html.Hr(className='orange_line'),
     #############
     # SECTION 1 #
     #############
@@ -313,8 +320,8 @@ layout = html.Div([
         'marginTop': '30px'
     }
     ),
-    #html.Br(),
-    #html.Br(),
+    html.Br(),
+    html.Br(),
     #html.Div(id='display-answers_p8', style={'marginTop': '50px', 'whiteSpace': 'pre-wrap'})
     
 ])
