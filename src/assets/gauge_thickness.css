@@ -1,0 +1,5 @@
+.dash-daq-gauge {
+    --needle-thickness: 10px;
+    --track-width: 50px;
+    --progress-width: 50px;
+}
