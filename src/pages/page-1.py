@@ -20,20 +20,6 @@ initial_state = {
     "gauge_in3": {"current": 0.0, "target": 0.0, "wait": 0}
 }
 
-gauge_fig = go.Figure(go.Indicator(
-    mode="gauge+number",
-    value=1.5,
-    gauge={
-        'axis': {'range': [0, 3]},
-        'bar': {'color': "darkblue", 'thickness': 0.5},  # Change thickness here (0-1)
-        'steps': [
-            {'range': [0, 0.1], 'color': 'grey'},
-            {'range': [0.1, 1], 'color': 'limegreen'},
-            {'range': [1, 2], 'color': 'orange'},
-            {'range': [2, 3], 'color': 'red'}
-        ]
-    }
-))
 
 layout = html.Div([
     html.Img(src='/assets/TickTOOL_logo.png', style={'width': '40%', 'height': '40%'}, className='image-gallery'),
@@ -58,16 +44,13 @@ layout = html.Div([
         html.P('Risk of exposure', style={'font-size' : '25px', "font-weight": "bold"}),
         html.P('Level of preventive behaviours', style={'font-size' : '25px', "font-weight": "bold"})
     ], style={
-        # Flexbox styling to arrange gauges horizontally
         'display': 'flex',
-        'justify-content': 'space-evenly',   # Evenly distribute space between gauges
-        'align-items': 'center',           # Align gauges vertically in the center
+        'justify-content': 'space-evenly',   
+        'align-items': 'center',
         'margin-top': '20px'
     }),
     ############
     ############
-    dcc.Graph(figure=gauge_fig),
-    
     ###############
     html.Div([
         daq.Gauge(
